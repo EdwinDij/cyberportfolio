@@ -1,7 +1,7 @@
+"use client";
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GlitchLineProps } from '../types';
-
 
 const GlitchLine: React.FC<GlitchLineProps> = ({ top, height, color }) => (
   <motion.div
@@ -27,7 +27,7 @@ const ChromaticAberration = () => (
     </>
 );
 
-const SystemMalfunction = () => {
+export const SystemMalfunction = () => {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
@@ -75,5 +75,3 @@ const SystemMalfunction = () => {
     </AnimatePresence>
   );
 };
-
-export default SystemMalfunction;
