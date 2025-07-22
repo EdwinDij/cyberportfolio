@@ -1,0 +1,1 @@
+export type {HudElementProps} from './hudType';
