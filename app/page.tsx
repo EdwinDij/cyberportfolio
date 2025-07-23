@@ -2,7 +2,7 @@
 import { AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { CyberLoader, Navbar, Techno } from "./components";
-import { Hero, Services } from "./components/";
+import { Hero, Services, About } from "./components/";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -22,6 +22,7 @@ export default function Home() {
             <Hero />
             <Services />
             <Techno />
+            <About />
           </main>
           <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
         </div>
