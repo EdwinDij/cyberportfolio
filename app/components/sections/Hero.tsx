@@ -27,8 +27,8 @@ export const Hero = () => {
   };
 
   return (
-    <motion.div
-      className="space-y-32 md:space-y-48"
+    <motion.section
+      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -38,7 +38,7 @@ export const Hero = () => {
           className="text-5xl sm:text-6xl md:text-8xl font-bold font-heading"
           variants={itemVariants}
         >
-          <span className="glitch-text" data-text="Edwin Dijeont">
+          <span className="glitch-text" data-text="EdwinDijeont">
             Edwin Dijeont
           </span>
         </motion.h1>
@@ -58,13 +58,13 @@ export const Hero = () => {
         </motion.p>
         <motion.div
           variants={itemVariants}
-          className="mt-10 "
+          className="mt-10 flex justify-center"
         >
-          <Button asLink href="/projects" >
+          <Button asLink href="/projects">
             Explorer mes projets
           </Button>
         </motion.div>
       </section>
-    </motion.div>
+    </motion.section>
   );
 };

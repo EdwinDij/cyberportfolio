@@ -63,8 +63,8 @@ export const Navbar = () => {
               key={href}
               href={href}
               onClick={(e) => handleNavClick(e, scrollTo)}
-              className={`transition-colors hover:text-red-400 ${
-                isActive(href) ? "text-red-400" : ""
+              className={`transition-colors hover:text-red-500 ${
+                isActive(href) ? "text-red-500" : ""
               }`}
             >
               {label}
