@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { TechnoType } from "../../types";
+import { motion } from "framer-motion";
 
 const technologies: TechnoType[] = [
   {
@@ -59,7 +60,21 @@ export const Techno = () => {
   return (
     <section id="technologies" className="py-24">
       <div className="container mx-auto px-10 sm:px-6 lg:px-12">
-        <h2 className="text-3xl font-bold mb-8 text-center">Technologies</h2>
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold font-heading">
+            <span className="text-cyan-400">//</span> PROTOCOLES_OP
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            Mon arsenal de compétences pour construire le futur du web.
+          </p>
+        </motion.div>
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {technologies.map((tech) => (
             <div

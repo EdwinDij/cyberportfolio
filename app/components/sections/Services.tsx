@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Layers, Brush, Shield, Zap, Wrench } from "lucide-react";
+import { Layers, Brush, Shield, Zap } from "lucide-react";
 import { Service, ServiceCardProps } from "../../types/";
 
 const services: Service[] = [
