@@ -1,7 +1,7 @@
 "use client";
 import { AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
-import { CyberLoader, Navbar } from "./components";
+import { CyberLoader, Navbar, Techno } from "./components";
 import { Hero, Services } from "./components/";
 
 export default function Home() {
@@ -21,6 +21,7 @@ export default function Home() {
           <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
             <Hero />
             <Services />
+            <Techno />
           </main>
           <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
         </div>

@@ -60,7 +60,7 @@ export const Hero = () => {
           variants={itemVariants}
           className="mt-10 flex justify-center"
         >
-          <Button asLink href="/projects">
+          <Button  href="/projects">
             Explorer mes projets
           </Button>
         </motion.div>

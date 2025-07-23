@@ -1,3 +1,4 @@
 export {Hero} from './Hero';
 export {Services} from './Services';
 // export {Projects} from './Projects';
+export {Techno} from './Techno';
