@@ -1,56 +1,70 @@
 import Image from "next/image";
 import React from "react";
+import { TechnoType } from "../../types";
 
-const technologies = [
+const technologies: TechnoType[] = [
   {
     name: "React",
     description:
-      "Construction d'interfaces utilisateur réactives et complexes.",
-    logo: "/next.svg",
+      "Bibliothèque JavaScript pour construire des interfaces utilisateur dynamiques et maintenables, utilisée par les plus grandes entreprises.",
+    logo: "/assets/React.png",
     className: "md:col-span-2",
   },
   {
     name: "TailwindCSS",
-    description: "Styling rapide et sur-mesure pour des designs uniques.",
-    logo: "/next.svg",
+    description:
+      "Framework CSS utilitaire permettant de créer rapidement des interfaces modernes, personnalisées et responsives.",
+    logo: "/assets/tailwindicon.png",
     className: "md:col-span-1",
   },
   {
-    name: "Vite",
-    description: "Build tool ultra-rapide pour un développement moderne.",
-    logo: "/next.svg",
+    name: "CircleCI",
+    description:
+      "Plateforme d'intégration continue pour automatiser les tests et déploiements en toute confiance.",
+    logo: "/assets/circleci.png",
     className: "md:col-span-1",
   },
   {
-    name: "Framer Motion",
-    description: "Animations fluides et complexes pour une UX vivante.",
-    logo: "/next.svg",
+    name: "Vercel",
+    description:
+      "Solution de déploiement optimisée pour les applications front-end, avec CDN intégré et CI/CD.",
+    logo: "/assets/vercel.svg",
     className: "md:col-span-1",
   },
   {
     name: "TypeScript",
-    description: "Typage statique pour une meilleure robustesse du code.",
-    logo: "/next.svg",
+    description:
+      "Superset de JavaScript offrant un typage statique pour sécuriser le code et améliorer la productivité à long terme.",
+    logo: "/assets/typescript.png",
     className: "md:col-span-1",
   },
   {
     name: "Next.js",
-    description: "Framework React pour des applications web performantes.",
-    logo: "/next.svg",
+    description:
+      "Framework React full-stack, conçu pour des applications web rapides, SEO-friendly et scalables.",
+    logo: "/assets/nextjsicon.png",
     className: "md:col-span-2",
   },
+  {
+    name: "Firebase",
+    description:
+      "Plateforme BaaS de Google facilitant l’authentification, l’hébergement et la gestion de base de données en temps réel.",
+    logo: "/assets/firebaseicon.png",
+    className: "md:col-span-1",
+  },
 ];
+
 
 export const Techno = () => {
   return (
     <section id="technologies" className="py-24">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="container mx-auto px-10 sm:px-6 lg:px-12">
         <h2 className="text-3xl font-bold mb-8 text-center">Technologies</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {technologies.map((tech) => (
             <div
               key={tech.name}
-              className={`p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800 ${tech.className}`}
+              className={`p-6 shadow-lg bg-white dark:bg-gray-800 ${tech.className}  rounded-lg flex flex-col items-center text-center project-card `}
             >
               <Image
               width={64}
