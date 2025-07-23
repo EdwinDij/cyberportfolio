@@ -40,7 +40,7 @@ export const Navbar = () => {
 
   return (
     <motion.header
-      className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur border-b border-border"
+      className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur border-b border-border border-white/10"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -63,8 +63,8 @@ export const Navbar = () => {
               key={href}
               href={href}
               onClick={(e) => handleNavClick(e, scrollTo)}
-              className={`transition-colors hover:text-secondary ${
-                isActive(href) ? "text-secondary" : ""
+              className={`transition-colors hover:text-red-400 ${
+                isActive(href) ? "text-red-400" : ""
               }`}
             >
               {label}
@@ -105,8 +105,8 @@ export const Navbar = () => {
                   key={href}
                   href={href}
                   onClick={(e) => handleNavClick(e, scrollTo)}
-                  className={`transition-colors hover:text-secondary ${
-                    isActive(href) ? "text-secondary" : ""
+                  className={`transition-colors hover:text-red-400 ${
+                    isActive(href) ? "text-red-400" : ""
                   }`}
                 >
                   {label}
