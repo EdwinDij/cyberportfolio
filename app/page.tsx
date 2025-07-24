@@ -1,7 +1,7 @@
 "use client";
 import { AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
-import { Contact, CyberLoader, Navbar, Techno } from "./components";
+import { Contact, CyberLoader, Techno,  } from "./components";
 import { Hero, Services, About } from "./components/";
 
 export default function Home() {

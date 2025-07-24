@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { OverlayHud, PlexusBackground } from "./components";
+import { Footer, OverlayHud, PlexusBackground } from "./components";
 import { Navbar } from "./components/";
 import { LoadingProvider } from "./context/LoadingContext";
 
@@ -37,6 +37,8 @@ export default function RootLayout({
           {children}
           <OverlayHud />
         </body>
+        <Footer />
+
       </LoadingProvider>
     </html>
   );
