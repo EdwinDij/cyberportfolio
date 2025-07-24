@@ -46,7 +46,7 @@ export const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
-        <Link href="/">
+        <Link href="#">
           <motion.div
             className="font-heading text-2xl glitch-text"
             data-text="JD"
