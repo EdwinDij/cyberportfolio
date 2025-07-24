@@ -39,7 +39,7 @@ export async function POST(req: Request) {
       <p>Nous vous répondrons dans les plus brefs délais.<br/>
       Merci encore pour votre confiance !</p>
 
-      <p style="margin-top: 30px;">— L’équipe <strong>TrimioEdit</strong></p>
+      <p style="margin-top: 30px;">— <strong>Edwin Dijeont</strong></p>
     </div>
   `,
         };

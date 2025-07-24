@@ -6,7 +6,7 @@ export const useContact = () => {
   const [email, setEmail] = useState<string>("");
   const [projectType, setProjectType] = useState<string>("");
   const [description, setDescription] = useState<string>("");
-  const [feedbackMessage, setFeedbackMessage] = useState<null | {
+  const [errorMessage, seterrorMessage] = useState<null | {
     type: "success" | "error" | "warning";
     text: string;
   }>(null);
@@ -15,7 +15,7 @@ export const useContact = () => {
     e.preventDefault();
 
     if (!name || !email || !description || projectType.length === 0) {
-      setFeedbackMessage({
+      seterrorMessage({
         type: "warning",
         text: "Veuillez remplir tous les champs obligatoires.",
       });
@@ -31,27 +31,27 @@ export const useContact = () => {
         body: JSON.stringify({ name, email, projectType, description }),
       });
       if (res.ok) {
-        setFeedbackMessage({
+        seterrorMessage({
           type: "success",
           text: "Votre message a bien été envoyé ! Nous vous répondrons rapidement. Pensez à vérifier vos spams.",
         });
         setName("");
         setEmail("");
-        setProjectType([]);
+        setProjectType("");
         setDescription("");
       } else {
-        setFeedbackMessage({
+        seterrorMessage({
           type: "error",
           text: "Une erreur est survenue. Veuillez réessayer.",
         });
       }
     } catch (err) {
-      setFeedbackMessage({
+      seterrorMessage({
         type: "error",
         text: "Erreur de connexion. Réessayez plus tard.",
       });
     }
-    setTimeout(() => setFeedbackMessage(null), 10000); // Disparition après 5 sec
+    setTimeout(() => seterrorMessage(null), 10000); // Disparition après 5 sec
   };
 
   return {
@@ -63,5 +63,7 @@ export const useContact = () => {
     setEmail,
     setProjectType,
     setName,
+    sendMessage,
+    errorMessage,
   };
 };
