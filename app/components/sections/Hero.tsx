@@ -28,12 +28,12 @@ export const Hero = () => {
 
   return (
     <motion.section
-      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
+      className="w-screen max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <section className="min-h-[80vh] flex flex-col justify-center items-center text-center relative pt-16">
+      <div className="min-h-[80vh] flex flex-col justify-center items-center text-center relative pt-16">
         <motion.h1
           className="text-5xl sm:text-6xl md:text-8xl font-bold font-heading"
           variants={itemVariants}
@@ -64,7 +64,7 @@ export const Hero = () => {
             Explorer mes projets
           </Button>
         </motion.div>
-      </section>
+      </div>
     </motion.section>
   );
 };

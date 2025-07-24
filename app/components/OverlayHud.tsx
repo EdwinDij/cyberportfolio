@@ -35,8 +35,8 @@ export const OverlayHud = () => {
       </HudElement>
 
       <HudElement className="absolute top-1/2 right-4 -translate-y-1/2 text-right text-cyan-400/50">
-        <p>UID: JHN.DOE_DEV</p>
-        <p>NODE: FR-PAR-01</p>
+        <p>UID: EDW.DIJ_DEV</p>
+        <p>NODE: FR-PAR-19</p>
       </HudElement>
 
       {/* Top and Bottom lines */}

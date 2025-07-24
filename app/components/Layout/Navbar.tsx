@@ -40,7 +40,7 @@ export const Navbar = () => {
 
   return (
     <motion.header
-      className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur border-b border-border border-white/10"
+      className="fixed top-0 w-screen z-50 bg-background/80 backdrop-blur border-b border-border border-white/10"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}

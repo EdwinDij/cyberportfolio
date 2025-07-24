@@ -1,7 +1,7 @@
 "use client";
 import { AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
-import { CyberLoader, Navbar, Techno } from "./components";
+import { Contact, CyberLoader, Navbar, Techno } from "./components";
 import { Hero, Services, About } from "./components/";
 
 export default function Home() {
@@ -17,14 +17,14 @@ export default function Home() {
       <AnimatePresence>{loading && <CyberLoader />}</AnimatePresence>
 
       {!loading && (
-        <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-          <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <div className="font-sans sm:grid sm:grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+          <main className="flex flex-col gap-[32px] row-start-2 items-center ">
             <Hero />
             <Services />
             <Techno />
             <About />
+            <Contact />
           </main>
-          <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
         </div>
       )}
     </>
