@@ -5,3 +5,4 @@ export type {Service, ServiceCardProps} from './serviceType';
 export type {BentoGridProps, BentoGridItemProps} from './bentoGridProps';
 export type {TechnoType} from './technoType';
 export type {ButtonProps, LinkProps} from './buttonProps'
+export type {ProjectType} from './projectType';

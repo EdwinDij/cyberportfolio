@@ -71,13 +71,13 @@ body {
 }
 .glitch-text::before {
   left: 2px;
-  text-shadow: -1px 0 hsl(var(--secondary));
+  text-shadow: -1px 1 red;
   animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
 }
 
 .glitch-text::after {
   left: -2px;
-  text-shadow: -1px 0 hsl(var(--primary) / 0.5);
+  text-shadow: -1px 0 red;
   animation: glitch-anim-2 3s infinite linear alternate-reverse;
 }
 

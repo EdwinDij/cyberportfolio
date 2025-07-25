@@ -2,29 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "../ui/Button";
+import { containerVariants, itemVariants } from "../../lib/variants";
 
 export const Hero = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring" as const,
-        stiffness: 100,
-      },
-    },
-  };
 
   return (
     <motion.section
@@ -33,12 +13,12 @@ export const Hero = () => {
       initial="hidden"
       animate="visible"
     >
-      <div className="min-h-[80vh] flex flex-col justify-center items-center text-center relative pt-16">
+      <div className="flex flex-col justify-center items-center text-center relative pt-16">
         <motion.h1
           className="text-5xl sm:text-6xl md:text-8xl font-bold font-heading"
           variants={itemVariants}
         >
-          <span className="glitch-text" data-text="EdwinDijeont">
+          <span className="glitch-text" data-text="Edwin Dijeont">
             Edwin Dijeont
           </span>
         </motion.h1>

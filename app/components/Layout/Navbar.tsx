@@ -27,7 +27,7 @@ export const Navbar = () => {
 
 const handleNavClick = (e: React.MouseEvent, scrollTo?: string) => {
   const isSamePageScroll = pathname === "/" && !!scrollTo;
-
+  setDrawerOpen(false);
   if (!isSamePageScroll) return;
 
   e.preventDefault();
@@ -42,7 +42,7 @@ const handleNavClick = (e: React.MouseEvent, scrollTo?: string) => {
 
   return (
     <motion.header
-      className="fixed top-0 w-screen z-50 bg-background/80 backdrop-blur border-b border-border border-white/10"
+      className="sticky max-sm:fixed top-0 w-screen z-50 bg-background/80 backdrop-blur border-b border-border border-white/10"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
