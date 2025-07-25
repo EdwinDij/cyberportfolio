@@ -5,7 +5,7 @@ import { itemVariants } from "../lib";
 import { Button } from "../components/ui/Button";
 import { useWork } from "../components/hooks";
 import Image from "next/image";
-import Link from "next/link";
+
 
 export default function Page() {
   const { projects, selectedProject, setSelectedProject } = useWork();

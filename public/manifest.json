@@ -1,0 +1,10 @@
+{
+    "name": "Edwin Dijeont dev",
+    "short_name": "Edwin Dijeont",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#121212",
+    "theme_color": "#1a1a1a",
+    "description": "Portfolio de Edwin Dijeont développeur web front end.",
+    "lang": "fr"
+}
