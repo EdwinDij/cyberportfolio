@@ -3,9 +3,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "../ui/Button";
 import { containerVariants, itemVariants } from "../../lib/variants";
+import Link from "next/link";
 
 export const Hero = () => {
-
   return (
     <motion.section
       className="w-screen max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
@@ -40,8 +40,8 @@ export const Hero = () => {
           variants={itemVariants}
           className="mt-10 flex justify-center"
         >
-          <Button  href="/projects">
-            Explorer mes projets
+          <Button href="/Work">
+            <Link href="/Work">Explorer mes projets</Link>
           </Button>
         </motion.div>
       </div>
