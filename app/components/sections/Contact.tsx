@@ -29,7 +29,7 @@ export const Contact = () => {
       <div className="container mx-auto px-10 sm:px-6 lg:px-12">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-heading">
-            <span className="text-cyan-400 uppercase">//</span> Ligne Sécurisée
+            <span className="text-cyan-400 uppercase">{"//"}</span> Ligne Sécurisée
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             Prêt à transmettre un signal ? Connectons nos esprits.

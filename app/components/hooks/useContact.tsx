@@ -46,6 +46,7 @@ export const useContact = () => {
         });
       }
     } catch (err) {
+      console.error("Erreur lors de l'envoi du message :", err);
       seterrorMessage({
         type: "error",
         text: "Erreur de connexion. Réessayez plus tard.",

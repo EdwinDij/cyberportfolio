@@ -41,7 +41,7 @@ export default function Page() {
           <div className="project-card px-6 max-sm:pb-9">
             <div className="mt-4">
               <h2 className="text-2xl font-bold mb-10 uppercase text-cyan-400">
-                // Select_project :
+                {"// Select_project :"}
               </h2>
               {projects.map((project) => {
                 const isActive = selectedProject === project.id;

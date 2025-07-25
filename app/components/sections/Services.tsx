@@ -64,7 +64,7 @@ export const Services = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold font-heading">
-            <span className="text-cyan-400">//</span> PROTOCOLES_OP
+            <span className="text-cyan-400">{"//"}</span> PROTOCOLES_OP
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             Mon arsenal de compétences pour construire le futur du web.
