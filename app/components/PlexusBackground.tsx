@@ -1,29 +1,14 @@
-"use client";
-import React, { useRef, useEffect, useState } from "react";
+'use client';
+import React, { useRef, useEffect } from 'react';
 
 export const PlexusBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [primaryColor, setPrimaryColor] =
-    useState<string>("hsl(190, 95%, 50%)");
 
   useEffect(() => {
-    const color = getComputedStyle(document.documentElement)
-      .getPropertyValue("--primary")
-      .trim();
-
-    if (color) {
-      const [h, s, l] = color.split(" ").map(parseFloat);
-      if (!isNaN(h) && !isNaN(s) && !isNaN(l)) {
-        setPrimaryColor(`hsl(${h}, ${s}%, ${l}%)`);
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!primaryColor || !canvasRef.current) return;
+    if (!canvasRef.current) return;
 
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     let animationFrameId: number;
@@ -72,8 +57,7 @@ export const PlexusBackground: React.FC = () => {
         if (!ctx) return;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = primaryColor;
-        ctx.fill();
+        ctx.fillStyle = '#ff0000'; 
       }
     }
 
@@ -97,13 +81,7 @@ export const PlexusBackground: React.FC = () => {
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
 
-            const baseColor = getComputedStyle(document.documentElement)
-              .getPropertyValue("--primary")
-              .trim();
-
-            ctx.strokeStyle = `hsla(${baseColor}, ${
-              1 - distance / maxDistance
-            })`;
+            ctx.strokeStyle = `rgba(128, 0, 32, ${1 - distance / maxDistance})`; // 🟣 bordeaux avec opacité
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -130,14 +108,13 @@ export const PlexusBackground: React.FC = () => {
 
     init();
     animate();
-
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [primaryColor]);
+  }, []);
 
   return (
     <canvas
