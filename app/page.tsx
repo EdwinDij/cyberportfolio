@@ -8,10 +8,19 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 4500);
-    return () => clearTimeout(timer);
-  }, []);
+    const alreadyLoaded = sessionStorage.getItem("hasVisitedHome");
 
+    if (alreadyLoaded) {
+      setLoading(false); // ne pas afficher le loader si déjà vu
+    } else {
+      const timer = setTimeout(() => {
+        setLoading(false);
+        sessionStorage.setItem("hasVisitedHome", "true");
+      }, 4500);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
   return (
     <>
       <AnimatePresence>{loading && <CyberLoader />}</AnimatePresence>

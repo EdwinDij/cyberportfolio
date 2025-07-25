@@ -1,5 +1,4 @@
 import React from "react";
-import { Linkedin, Globe } from "lucide-react"; // ou icônes custom si tu veux
 import Link from "next/link";
 
 export const Footer = () => {

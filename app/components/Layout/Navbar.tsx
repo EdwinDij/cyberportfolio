@@ -14,9 +14,9 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { label: "// About", href: "/#about", scrollTo: "about" },
+  { label: "// A propos", href: "/#about", scrollTo: "about" },
   { label: "// Services", href: "/#services", scrollTo: "services" },
-  { label: "// Projects", href: "/projects" },
+  { label: "// Projets", href: "/Work" },
 ];
 
 export const Navbar = () => {
@@ -25,16 +25,18 @@ export const Navbar = () => {
   const { loading } = useLoading();
   if (loading) return null;
 
-  const handleNavClick = (e: React.MouseEvent, scrollTo?: string) => {
-    if (pathname !== "/") return;
+const handleNavClick = (e: React.MouseEvent, scrollTo?: string) => {
+  const isSamePageScroll = pathname === "/" && !!scrollTo;
 
-    e.preventDefault();
-    const target = document.getElementById(scrollTo || "");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-      setDrawerOpen(false);
-    }
-  };
+  if (!isSamePageScroll) return;
+
+  e.preventDefault();
+  const target = document.getElementById(scrollTo || "");
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+    setDrawerOpen(false);
+  }
+};
 
   const isActive = (href: string) => pathname === href;
 
@@ -46,7 +48,7 @@ export const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
-        <Link href="#">
+        <Link href="/#hero">
           <motion.div
             className="font-heading text-2xl glitch-text"
             data-text="JD"
@@ -58,18 +60,25 @@ export const Navbar = () => {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center space-x-8 font-heading text-lg">
-          {navItems.map(({ label, href, scrollTo }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={(e) => handleNavClick(e, scrollTo)}
-              className={`transition-colors hover:text-red-500 ${
-                isActive(href) ? "text-red-500" : ""
-              }`}
-            >
-              {label}
-            </Link>
-          ))}
+
+          {navItems.map(({ label, href, scrollTo }) => {
+            const isScrollLink = !!scrollTo && href.startsWith("/#");
+
+            return (
+              <Link
+                key={href}
+                href={href}
+                onClick={
+                  isScrollLink ? (e) => handleNavClick(e, scrollTo) : undefined
+                }
+                className={`transition-colors hover:text-red-500 ${
+                  isActive(href) ? "text-red-500" : ""
+                }`}
+              >
+                {label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Mobile hamburger */}
