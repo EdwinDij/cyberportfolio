@@ -18,7 +18,7 @@ export const Hero = () => {
           className="text-5xl sm:text-6xl md:text-8xl font-bold font-heading"
           variants={itemVariants}
         >
-          <span className="glitch-text" data-text="Edwin Dijeont">
+          <span className="glitch-text cyberfont" data-text="Edwin Dijeont">
             Edwin Dijeont
           </span>
         </motion.h1>

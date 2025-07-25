@@ -25,32 +25,32 @@ export const Navbar = () => {
   const { loading } = useLoading();
   if (loading) return null;
 
-const handleNavClick = (e: React.MouseEvent, scrollTo?: string) => {
-  const isSamePageScroll = pathname === "/" && !!scrollTo;
-  setDrawerOpen(false);
-  if (!isSamePageScroll) return;
-
-  e.preventDefault();
-  const target = document.getElementById(scrollTo || "");
-  if (target) {
-    target.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (e: React.MouseEvent, scrollTo?: string) => {
+    const isSamePageScroll = pathname === "/" && !!scrollTo;
     setDrawerOpen(false);
-  }
-};
+    if (!isSamePageScroll) return;
+
+    e.preventDefault();
+    const target = document.getElementById(scrollTo || "");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+      setDrawerOpen(false);
+    }
+  };
 
   const isActive = (href: string) => pathname === href;
 
   return (
     <motion.header
-      className="sticky max-sm:fixed top-0 w-screen z-50 bg-background/80 backdrop-blur border-b border-border border-white/10"
+      className="sticky max-sm:fixed top-0 w-screen z-50 bg-background/80 backdrop-blur border-b border-border border-white/10 "
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center ">
         <Link href="/#hero">
           <motion.div
-            className="font-heading text-2xl glitch-text"
+            className="font-heading text-2xl glitch-text cyberfont"
             data-text="JD"
             whileHover={{ scale: 1.1 }}
           >
@@ -60,7 +60,6 @@ const handleNavClick = (e: React.MouseEvent, scrollTo?: string) => {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center space-x-8 font-heading text-lg">
-
           {navItems.map(({ label, href, scrollTo }) => {
             const isScrollLink = !!scrollTo && href.startsWith("/#");
 
