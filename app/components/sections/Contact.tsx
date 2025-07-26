@@ -130,7 +130,7 @@ export const Contact = () => {
             <div className="text-center pt-4 flex">
               <Button
                 type="submit"
-                className="w-full flex justify-center gap-6 bg-red-500 text-white py-4"
+                className="w-full flex justify-center gap-6 bg-red-500 text-black py-4"
               >
                 Transmettre le signal <Send />
               </Button>
