@@ -7,15 +7,14 @@ export const PlexusBackground: React.FC = () => {
     useState<string>("hsl(190, 95%, 50%)");
 
   useEffect(() => {
+    // On récupère la variable CSS
     const color = getComputedStyle(document.documentElement)
       .getPropertyValue("--primary")
       .trim();
 
-    if (color) {
-      const [h, s, l] = color.split(" ").map(parseFloat);
-      if (!isNaN(h) && !isNaN(s) && !isNaN(l)) {
-        setPrimaryColor(`hsl(${h}, ${s}%, ${l}%)`);
-      }
+    // Si la variable est du type "hsl(...)" => on l'utilise directement
+    if (color.startsWith("hsl")) {
+      setPrimaryColor(color);
     }
   }, []);
 
@@ -97,13 +96,12 @@ export const PlexusBackground: React.FC = () => {
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
 
-            const baseColor = getComputedStyle(document.documentElement)
-              .getPropertyValue("--primary")
-              .trim();
+            // On génère un hsla() à partir du hsl()
+            const hslaColor = primaryColor
+              .replace("hsl", "hsla")
+              .replace(")", `, ${1 - distance / maxDistance})`);
 
-            ctx.strokeStyle = `hsla(${baseColor}, ${
-              1 - distance / maxDistance
-            })`;
+            ctx.strokeStyle = hslaColor;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -113,7 +111,10 @@ export const PlexusBackground: React.FC = () => {
 
     function animate() {
       if (!ctx) return;
-      ctx.clearRect(0, 0, width, height);
+      // Fond noir (ou la couleur que tu veux)
+      ctx.fillStyle = "black";
+      ctx.fillRect(0, 0, width, height);
+
       particles.forEach((p) => {
         p.update();
         p.draw();
