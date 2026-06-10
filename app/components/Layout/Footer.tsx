@@ -24,7 +24,7 @@ export const Footer = () => {
             Malt
           </Link>
           <Link
-            href="https://www.malt.fr/profile/edwindijeont"
+            href="https://github.com/EdwinDij"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-cyan-400 transition-colors flex items-center gap-2 text-sm"
