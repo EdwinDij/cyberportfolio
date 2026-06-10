@@ -47,7 +47,7 @@ const projects: ProjectType[] = [
     link: "https://rhalgr.vercel.app/",
     techno: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "MDX", "Keystatic"],
     github: "https://github.com/EdwinDij/rhalgr",
-    image: "/assets/rhalgr.png",
+    image: "/assets/rhalgr.webp",
   },
 ];
 
