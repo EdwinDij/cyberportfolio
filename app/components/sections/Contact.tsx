@@ -1,26 +1,42 @@
 "use client";
 import React from "react";
-import { Button } from "../ui/Button";
-import { useContact } from "../hooks";
-import { Info, Mail, Send } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FeedbackMessage } from "../ui/FeedBackMessage";
+import { Mail } from "lucide-react";
+
+const CONTACT_LINKS = [
+  {
+    label: "Mail",
+    value: "edwin.d899@gmail.com",
+    href: "mailto:edwin.d899@gmail.com",
+    icon: <Mail className="w-6 h-6 text-red-500/90" />,
+    description: "Réponse sous 24h ouvrées",
+  },
+  {
+    label: "LinkedIn",
+    value: "/in/edwin-dijeont",
+    href: "https://www.linkedin.com/in/edwin-dijeont-1469a0226",
+    icon: (
+      <svg className="w-6 h-6 text-red-500/90" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    ),
+    description: "Profil professionnel",
+  },
+  {
+    label: "Malt",
+    value: "malt.fr/profile/edwindijeont",
+    href: "https://www.malt.fr/profile/edwindijeont",
+    icon: (
+      <svg className="w-6 h-6 text-red-500/90" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19.28 3.293a1 1 0 00-1.415 0l-2.17 2.17A8.5 8.5 0 003.5 17.914l-1.207 1.207a1 1 0 101.414 1.414L4.914 19.33A8.5 8.5 0 0019.45 5.62l.537-.537a1 1 0 00-.707-1.79zM12 19a7 7 0 110-14 7 7 0 010 14z" />
+      </svg>
+    ),
+    description: "Disponibilités & devis",
+  },
+];
 
 export const Contact = () => {
-  const {
-    description,
-    email,
-    projectType,
-    name,
-    setDescription,
-    setEmail,
-    setProjectType,
-    setName,
-    sendMessage,
-    errorMessage,
-  } = useContact();
-
   return (
     <section
       id="contact"
@@ -36,152 +52,36 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className="flex gap-10 max-sm:flex-col">
-          <form className="max-w-2xl mx-auto space-y-6 w-full" onSubmit={sendMessage}>
-            {/* 🟡 Zone Feedback */}
-            {errorMessage && (
-              <FeedbackMessage
-                type={errorMessage.type}
-                text={errorMessage.text}
-              />
-            )}
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-muted-foreground uppercase"
-                >
-                  Entreprise // Nom
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Neo Anderson"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="mt-1 w-full rounded-md border border-gray-300 bg-transparent px-4 py-2 text-white placeholder-gray-500 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-muted-foreground uppercase"
-                >
-                  Adresse // mail
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="neo@matrix.org"
-                  className="mt-1 w-full rounded-md border border-gray-300 bg-transparent px-4 py-2 text-white placeholder-gray-500 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="projectType"
-                className="block text-sm font-medium text-muted-foreground uppercase"
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {CONTACT_LINKS.map((link, i) => (
+            <motion.div
+              key={link.label}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+            >
+              <Link
+                href={link.href}
+                target={link.href.startsWith("mailto") ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center gap-4 p-8 rounded-lg border border-white/10 bg-blue-900/10 hover:border-red-500/50 hover:bg-blue-900/20 transition-all duration-300"
               >
-                Type de projet // intervention
-              </label>
-              <select
-                id="projectType"
-                name="projectType"
-                required
-                value={projectType}
-                onChange={(e) => setProjectType(e.target.value)}
-                className="mt-1 w-full appearance-none rounded-md border border-gray-300 bg-gray-900 text-white px-4 py-2 pr-10 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400"
-              >
-                <option value="">-- Sélectionner --</option>
-                <option value="Création de site web">Création de site web</option>
-                <option value="Refonte web">Refonte web</option>
-                <option value="Maintenance web">Maintenance web</option>
-                <option value="autre">Autre</option>
-              </select>
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-muted-foreground uppercase"
-              >
-                Message // transmission
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                required
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                placeholder="Décrivez votre projet..."
-                className="mt-1 w-full rounded-md border border-gray-300 bg-transparent px-4 py-2 text-white placeholder-gray-500 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400"
-              />
-            </div>
-
-            <div className="text-center pt-4 flex">
-              <Button
-                type="submit"
-                className="w-full flex justify-center gap-6 bg-red-500 text-black py-4"
-              >
-                Transmettre le signal <Send />
-              </Button>
-            </div>
-          </form>
-
-          {/* Bloc info à droite */}
-          <motion.div
-            className="flex-1 space-y-8"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            <div className="text-lg  space-y-4">
-              <p>
-                Contactez-nous pour tout renseignement, demande de devis ou
-                simplement pour échanger sur votre projet.
-              </p>
-              <p>
-                Pour toute demande de création de site web une maquette est
-                fortement recommandée.
-              </p>
-              <p>
-                Nous vous répondrons dans un délai maximum de 24 heures ouvrées.
-              </p>
-            </div>
-            <div className="bg-blue-900/30 border-l-4 border-red-500/90 p-4 rounded-r-lg">
-              <div className="flex items-start space-x-3">
-                <Info className="w-6 h-5 text-red-500/90 mt-1 flex-shrink-0" />
-                <p>
-                  Pour information, nous acceptons un nombre limité de projets
-                  afin de garantir une qualité optimale pour chacun de nos
-                  clients.
-                </p>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4 text-lg">
-                <div className="w-10 h-10 rounded-full bg-blue-800/30 flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-red-500/90" />
+                <div className="w-14 h-14 rounded-full bg-blue-800/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  {link.icon}
                 </div>
-                <Link
-                  href="mailto:edwin.d899@gmail.com"
-                  className="hover:text-red-500/90 transition-colors"
-                >
-                  edwin.d899@gmail.com
-                </Link>
-              </div>
-            </div>
-          </motion.div>
+                <div className="text-center">
+                  <p className="font-heading font-bold text-lg text-white uppercase tracking-wider">
+                    {link.label}
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-1 break-all">
+                    {link.value}
+                  </p>
+                  <p className="text-xs text-cyan-400/70 mt-2">{link.description}</p>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
