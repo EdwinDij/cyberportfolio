@@ -24,7 +24,7 @@ const projects: ProjectType[] = [
     id: 2,
     title: "Trimio Edit",
     description: "Site web professionnel pour Trimio, une agence de montage vidéo et prise de vue en drone.",
-    link: "/projects/project-2",
+    link: "https://trimio-eta.vercel.app/",
     techno: ["Next.js", "Tailwind CSS", "TypeScript", "Sendgrid"],
     github: "https://github.com/EdwinDij/trimio",
     image: "/assets/trimio.png",
@@ -34,10 +34,20 @@ const projects: ProjectType[] = [
     title: "Pupsty",
     description:
       "Rencontrez votre compagnon à quatre pattes parmi des milliers d'élevage de chiens et de chats",
-    link: "pup-rho.vercel.app",
+    link: "https://pup-rho.vercel.app/",
     techno: ["Next.js", "React", "Tailwind CSS", "Firebase"],
     github: "https://github.com/EdwinDij/pup",
     image: "/assets/pupsty.png",
+  },
+  {
+    id: 4,
+    title: "Rhalgr",
+    description:
+      "Plateforme communautaire de guides stratégiques pour les raids de Final Fantasy XIV — mécaniques, positionnements et outils visuels pour la communauté francophone.",
+    link: "https://rhalgr.vercel.app/",
+    techno: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "MDX", "Keystatic"],
+    github: "https://github.com/EdwinDij/rhalgr",
+    image: "/assets/rhalgr.webp",
   },
 ];
 
