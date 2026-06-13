@@ -1,8 +1,7 @@
 "use client";
 import { AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
-import { Contact, CyberLoader, Techno } from "./components";
-import { Hero, Services, About, Pricing } from "./components/";
+import { Contact, CyberLoader, Techno, Hero, Services, About, Pricing } from "./components";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
