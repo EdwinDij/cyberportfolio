@@ -2,7 +2,7 @@
 import { AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { Contact, CyberLoader, Techno } from "./components";
-import { Hero, Services, About } from "./components/";
+import { Hero, Services, About, Pricing } from "./components/";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -32,6 +32,7 @@ export default function Home() {
             <Services />
             <Techno />
             <About />
+            <Pricing />
             <Contact />
           </div>
         </main>
