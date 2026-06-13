@@ -85,20 +85,20 @@ const maintenanceOptions = [
 
 export const Pricing = () => {
   return (
-    <section id="tarifs" className="py-24 section-with-muted-bg w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto px-10 sm:px-6 lg:px-12">
+    <section id="tarifs" className="py-16 sm:py-24 section-with-muted-bg w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-heading">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading">
             <span className="text-cyan-400">{"//"}</span> PACKAGES_DISPONIBLES
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             Je conçois et développe des sites vitrines et applications web pour les indépendants et les PME.
             Chaque projet est livré avec un code propre, un déploiement sur mesure, et une prise en main simple.
           </p>
@@ -106,7 +106,7 @@ export const Pricing = () => {
 
         {/* Packages */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 sm:mb-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -116,27 +116,27 @@ export const Pricing = () => {
             <motion.div
               key={pkg.tag}
               variants={itemVariants}
-              className={`relative rounded-lg border bg-blue-900/10 p-8 flex flex-col gap-6 transition-all duration-300 ${pkg.border} ${pkg.glow}`}
+              className={`relative rounded-lg border bg-blue-900/10 p-5 sm:p-8 flex flex-col gap-5 transition-all duration-300 ${pkg.border} ${pkg.glow}`}
             >
               {pkg.featured && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-red-500 text-black text-xs font-bold font-heading px-4 py-1 rounded-full uppercase tracking-widest">
+                  <span className="bg-red-500 text-black text-xs font-bold font-heading px-4 py-1 rounded-full uppercase tracking-widest whitespace-nowrap">
                     Populaire
                   </span>
                 </div>
               )}
 
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-blue-800/40 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-blue-800/40 flex items-center justify-center shrink-0">
                   <pkg.icon className={`w-5 h-5 ${pkg.accent}`} />
                 </div>
-                <span className={`font-heading font-bold text-lg uppercase tracking-wider ${pkg.accent}`}>
+                <span className={`font-heading font-bold text-base sm:text-lg uppercase tracking-wider ${pkg.accent}`}>
                   {pkg.tag}
                 </span>
               </div>
 
               <div>
-                <p className="text-4xl font-bold font-heading text-white">{pkg.price}</p>
+                <p className="text-3xl sm:text-4xl font-bold font-heading text-white">{pkg.price}</p>
                 <p className="text-sm text-muted-foreground mt-2">{pkg.target}</p>
               </div>
 
@@ -170,22 +170,22 @@ export const Pricing = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-2xl font-bold font-heading text-center mb-8">
+          <h3 className="text-xl sm:text-2xl font-bold font-heading text-center mb-6 sm:mb-8">
             <span className="text-cyan-400">{"//"}</span> OPTION_MAINTENANCE
           </h3>
-          <p className="text-center text-muted-foreground mb-8 max-w-xl mx-auto">
+          <p className="text-center text-muted-foreground mb-6 sm:mb-8 max-w-xl mx-auto text-sm sm:text-base">
             Disponible en complément de chaque package, selon votre niveau d'autonomie souhaité.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
             {maintenanceOptions.map((opt) => (
               <div
                 key={opt.title}
-                className="rounded-lg border border-white/10 bg-blue-900/10 p-6 flex flex-col gap-4 hover:border-cyan-400/40 transition-all duration-300"
+                className="rounded-lg border border-white/10 bg-blue-900/10 p-5 sm:p-6 flex flex-col gap-4 hover:border-cyan-400/40 transition-all duration-300"
               >
                 <div className="flex justify-between items-center">
-                  <span className="font-heading font-bold text-lg uppercase text-white">{opt.title}</span>
-                  <span className="text-cyan-400 font-heading font-bold">{opt.subtitle}</span>
+                  <span className="font-heading font-bold text-base sm:text-lg uppercase text-white">{opt.title}</span>
+                  <span className="text-cyan-400 font-heading font-bold text-sm sm:text-base">{opt.subtitle}</span>
                 </div>
                 <ul className="flex flex-col gap-2">
                   {opt.features.map((f) => (
@@ -202,13 +202,13 @@ export const Pricing = () => {
 
         {/* Process */}
         <motion.div
-          className="mt-16 border border-white/10 rounded-lg bg-blue-900/10 p-8 max-w-3xl mx-auto"
+          className="mt-12 sm:mt-16 border border-white/10 rounded-lg bg-blue-900/10 p-5 sm:p-8 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <h3 className="text-xl font-bold font-heading text-center mb-6">
+          <h3 className="text-lg sm:text-xl font-bold font-heading text-center mb-5 sm:mb-6">
             <span className="text-cyan-400">{"//"}</span> COMMENT_ÇA_SE_PASSE
           </h3>
           <ol className="flex flex-col gap-4">
@@ -220,7 +220,7 @@ export const Pricing = () => {
               "2 allers-retours de corrections inclus après livraison",
             ].map((step, i) => (
               <li key={i} className="flex items-start gap-4 text-sm text-white/80">
-                <span className="font-heading font-bold text-cyan-400 text-lg leading-none w-6 shrink-0">
+                <span className="font-heading font-bold text-cyan-400 text-base sm:text-lg leading-none w-6 shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 {step}
