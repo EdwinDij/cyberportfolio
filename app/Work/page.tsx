@@ -1,16 +1,22 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import React from "react";
+import React, { useEffect } from "react";
 import { itemVariants } from "../lib";
 import { Button } from "../components/ui/Button";
 import { useWork } from "../components/hooks";
 import Image from "next/image";
 
-
 export default function Page() {
   const { projects, selectedProject, setSelectedProject } = useWork();
+  const sortedProjects = [...projects].sort((a, b) => b.id - a.id);
 
-  const currentProject = projects.find((p) => p.id === selectedProject);
+  useEffect(() => {
+    if (sortedProjects.length > 0) {
+      setSelectedProject(sortedProjects[0].id);
+    }
+  }, []);
+
+  const currentProject = sortedProjects.find((p) => p.id === selectedProject);
 
   return (
     <AnimatePresence mode="wait">
@@ -43,7 +49,7 @@ export default function Page() {
               <h2 className="text-2xl font-bold mb-10 uppercase text-cyan-400">
                 {"// Select_project :"}
               </h2>
-              {projects.map((project) => {
+              {sortedProjects.map((project) => {
                 const isActive = selectedProject === project.id;
 
                 return (

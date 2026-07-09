@@ -62,7 +62,7 @@ const projects: ProjectType[] = [
     title: "Traquéo",
     description:
       "SaaS de traçabilité des dates de péremption pour les métiers de bouche. Calcul automatique des dates de retrait, alertes équipe avant péremption, historique HACCP exportable PDF/CSV. Multi-boutiques, scan code-barres, PWA mobile installable.",
-    link: "https://traqueo.app",
+    link: "https://traqueo.fr/",
     techno: [
       "React",
       "TypeScript",
