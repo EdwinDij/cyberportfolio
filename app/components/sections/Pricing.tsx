@@ -87,7 +87,6 @@ export const Pricing = () => {
   return (
     <section id="tarifs" className="py-24 section-with-muted-bg w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto px-10 sm:px-6 lg:px-12">
-        {/* Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -104,9 +103,8 @@ export const Pricing = () => {
           </p>
         </motion.div>
 
-        {/* Packages */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 sm:flex gap-8 mb-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -163,7 +161,6 @@ export const Pricing = () => {
           ))}
         </motion.div>
 
-        {/* Maintenance */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -200,7 +197,6 @@ export const Pricing = () => {
           </div>
         </motion.div>
 
-        {/* Process */}
         <motion.div
           className="mt-16 border border-white/10 rounded-lg bg-blue-900/10 p-8 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
