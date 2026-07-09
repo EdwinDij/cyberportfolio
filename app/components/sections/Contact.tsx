@@ -42,7 +42,7 @@ export const Contact = () => {
       id="contact"
       className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 section-with-muted-bg"
     >
-      <div className="container mx-auto px-10 sm:px-6 lg:px-12">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-heading">
             <span className="text-cyan-400 uppercase">{"//"}</span> Ligne Sécurisée

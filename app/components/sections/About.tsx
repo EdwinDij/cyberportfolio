@@ -6,8 +6,8 @@ import { User, Code, Coffee } from "lucide-react";
 
 export const About = () => {
   return (
-    <section id="about" className="py-24">
-      <div className="container mx-auto px-10 sm:px-6 lg:px-12">
+    <section id="about" className="py-16 sm:py-24 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ export const About = () => {
               alt="About Image"
               width={600}
               height={600}
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none"
             />
           </div>
         </div>
