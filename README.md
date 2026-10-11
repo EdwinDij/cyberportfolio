@@ -2,7 +2,7 @@
 
 Portfolio personnel avec une esthétique cyberpunk, construit avec Next.js 16 et React 19.
 
-**Live** → [edwindijeont.fr](https://edwindijeont.fr) *(ou l'URL Vercel du projet)*
+
 
 ---
 
@@ -69,6 +69,6 @@ public/
 
 ## Contact
 
-- **Mail** — [edwin.d899@gmail.com](mailto:edwin.d899@gmail.com)
+- **Mail** — [edwin.d899@gmail.com](mailto:edwin9@dijeont.fr)
 - **LinkedIn** — [linkedin.com/in/edwin-dijeont-1469a0226](https://www.linkedin.com/in/edwin-dijeont-1469a0226)
 - **Malt** — [malt.fr/profile/edwindijeont](https://www.malt.fr/profile/edwindijeont)
