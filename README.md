@@ -69,6 +69,6 @@ public/
 
 ## Contact
 
-- **Mail** — [edwin.d899@gmail.com](mailto:edwin9@dijeont.fr)
+- **Mail** — [edwin@dijeont.fr](mailto:edwin@dijeont.fr)
 - **LinkedIn** — [linkedin.com/in/edwin-dijeont-1469a0226](https://www.linkedin.com/in/edwin-dijeont-1469a0226)
 - **Malt** — [malt.fr/profile/edwindijeont](https://www.malt.fr/profile/edwindijeont)

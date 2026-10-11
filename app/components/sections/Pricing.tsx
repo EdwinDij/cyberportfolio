@@ -149,7 +149,7 @@ export const Pricing = () => {
               </ul>
 
               <a
-                href="mailto:edwin.d899@gmail.com"
+                href="mailto:edwin@dijeont.fr"
                 className={`mt-2 w-full text-center py-3 rounded-md border font-heading text-sm uppercase tracking-widest font-bold transition-all duration-300 ${
                   pkg.featured
                     ? "bg-red-500 border-red-500 text-black hover:bg-red-400"

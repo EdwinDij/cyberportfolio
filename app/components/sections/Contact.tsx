@@ -7,8 +7,8 @@ import { Mail } from "lucide-react";
 const CONTACT_LINKS = [
   {
     label: "Mail",
-    value: "edwin.d899@gmail.com",
-    href: "mailto:edwin.d899@gmail.com",
+    value: "edwin@dijeont.fr",
+    href: "mailto:edwin@dijeont.fr",
     icon: <Mail className="w-6 h-6 text-red-500/90" />,
     description: "Réponse sous 24h ouvrées",
   },
