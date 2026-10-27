@@ -32,16 +32,6 @@ const projects: ProjectType[] = [
   },
   {
     id: 3,
-    title: "Pupsty",
-    description:
-      "Rencontrez votre compagnon à quatre pattes parmi des milliers d'élevage de chiens et de chats",
-    link: "https://pup-rho.vercel.app/",
-    techno: ["Next.js", "React", "Tailwind CSS", "Firebase"],
-    github: "https://github.com/EdwinDij/pup",
-    image: "/assets/pupsty.png",
-  },
-  {
-    id: 4,
     title: "Rhalgr",
     description:
       "Plateforme communautaire de guides stratégiques pour les raids de Final Fantasy XIV — mécaniques, positionnements et outils visuels pour la communauté francophone.",
@@ -58,7 +48,7 @@ const projects: ProjectType[] = [
     image: "/assets/rhalgr.webp",
   },
   {
-    id: 5,
+    id: 4,
     title: "Traquéo",
     description:
       "SaaS de traçabilité des dates de péremption pour les métiers de bouche. Calcul automatique des dates de retrait, alertes équipe avant péremption, historique HACCP exportable PDF/CSV. Multi-boutiques, scan code-barres, PWA mobile installable.",
