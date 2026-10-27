@@ -60,9 +60,8 @@ public/
 
 | Projet | Description | Lien |
 |---|---|---|
-| Bibliotekia | Bibliothèque numérique personnelle | [bibliotekia.fr](https://www.bibliotekia.fr/) |
+| Bibliotekia | Bibliothèque numérique personnelle | [bibliotekia.fr](https://www.bibliotekia.fr/) | maintenance
 | Trimio Edit | Site agence montage vidéo & drone | [trimio-eta.vercel.app](https://trimio-eta.vercel.app/) |
-| Pupsty | Plateforme de mise en relation pour adoptions | [pup-rho.vercel.app](https://pup-rho.vercel.app/) |
 | Rhalgr | Guides stratégiques raids FFXIV | [rhalgr.vercel.app](https://rhalgr.vercel.app/) |
 
 ---
